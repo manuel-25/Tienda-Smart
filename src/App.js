@@ -6,6 +6,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
+      <h2> Tienda Smart</h2>
     </div>
   );
 }
