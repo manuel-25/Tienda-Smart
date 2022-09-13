@@ -1,0 +1,32 @@
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100px;
+    width: 100vw;
+    border-bottom: 2px solid #FF585F;
+}
+
+.logo{
+    max-width: 200px;
+}
+
+.menu{
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+}
+
+.menu-link{
+    font-size: 18px;
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 16px;
+    text-decoration: none;
+    color: #1E55B3;
+    transition: all ease 1s;
+}
+
+.menu-link:hover {
+    background-color: rgb(198, 198, 198);
+}
