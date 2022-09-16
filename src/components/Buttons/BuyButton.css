@@ -1,0 +1,19 @@
+.button-container button {
+    width: 100%;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #fff;
+    background-color: #FF585F;
+    border-radius: 8px;
+    border-color: transparent;
+    padding: 8px 20px 8px 24px;
+    transition: all 0.2s ease-in;
+}
+
+.button-container button:hover {
+    background-color: #f83d46;
+}
+
+.button-container {
+    margin: 14px;
+}

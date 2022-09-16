@@ -1,3 +1,11 @@
 .greetings{
     color: #1E55B3;
 }
+
+.itemList {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
