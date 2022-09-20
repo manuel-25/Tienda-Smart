@@ -1,0 +1,19 @@
+.itemCount-container{
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    margin-bottom: 20px;
+    align-items: center;
+    font-weight: 400;
+    width: 6rem;
+    height: 30px;
+    border: 1px solid #333;
+    border-radius: 16px;
+    padding: 1px;
+}
+
+.itemCount-container button {
+    border: transparent;
+    background-color: transparent;
+    font-size: 20px;
+}

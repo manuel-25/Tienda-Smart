@@ -1,5 +1,5 @@
 import "./Card.css"
-import BuyButton from "../Buttons/BuyButton"
+import ItemCount from "../ItemCount/ItemCount"
 
 function Card (props) {
     return(
@@ -12,7 +12,7 @@ function Card (props) {
                 <p></p>
                 <h4>$ {props.price}</h4>
             </div>
-            <BuyButton />
+            <ItemCount stock={10} initial={1}/>
         </div>
     )
 }

@@ -1,4 +1,4 @@
-.button-container button {
+.btn-container button {
     width: 100%;
     font-size: 12px;
     letter-spacing: 3px;
@@ -7,13 +7,14 @@
     border-radius: 8px;
     border-color: transparent;
     padding: 8px 20px 8px 24px;
+    margin-bottom: 20px;
     transition: all 0.2s ease-in;
 }
 
-.button-container button:hover {
+.btn-container button:hover {
     background-color: #f83d46;
 }
 
-.button-container {
+.btn-container {
     margin: 14px;
 }
