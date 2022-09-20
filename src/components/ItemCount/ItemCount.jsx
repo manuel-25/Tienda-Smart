@@ -13,7 +13,7 @@ function ItemCount ({stock, initial}) {
     }
 
     function handleSubstract() {
-        if(count > initial) {
+        if(count > 1) {
             setCount(count-1)
         }
     }
