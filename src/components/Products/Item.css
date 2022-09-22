@@ -1,17 +1,17 @@
-.card-img {
+.item-img {
     width: 280px;
     height: 260px;
     object-fit: cover;
 }
 
-.card-img img {
+.item-img img {
     width: 100%;
     height: 100%;
     object-fit: contain;
     border-bottom: 1px solid rgb(184, 183, 183);
 }
 
-.card {
+.item {
     width: 280px;
     height: 100%;
     min-height: 300px;
@@ -24,29 +24,29 @@
     transition: all 0.20s ease-in;
 }
 
-.card:hover {
+.item:hover {
     box-shadow: 0px 4px 12px 2px rgba(0,0,0,0.25);
     transform: translateY(-6px);
 }
 
-.card-detail {
+.item-detail {
     padding: 6px 4px;
     color: #333;
 }
 
-.card-detail h3 {
+.item-detail h3 {
     font-size: 20px;
     font-weight: 300;
     line-height: 1.3;
 }
 
-.card-detail p {
+.item-detail p {
     font-size: 16px;
     font-weight: 200;
     line-height: 1.3;
 }
 
-.card-detail h4 {
+.item-detail h4 {
     font-size: 24px;
     font-weight: 400;
     line-height: 1.25;

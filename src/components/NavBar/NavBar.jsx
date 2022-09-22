@@ -1,12 +1,11 @@
 import "./NavBar.css";
-import logotipo from "../../img/tiendaSmartLogo.png"
 import CartWidget from "../CartWidget/CartWidget";
 
 function NavBar() {
     return (
         <header>
             <picture>
-                    <a href="index.html"><img className="logo" src={logotipo} alt="Logo"></img></a>
+                    <a href="index.html"><img className="logo" src={"/images/tiendaSmartLogo.png"} alt="Logo"></img></a>
                 </picture>
             <nav className="navbar"> 
                 <ul className="menu">
