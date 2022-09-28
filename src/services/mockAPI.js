@@ -5,7 +5,7 @@ const data = [
         price: 61.999,
         stock: 10,
         category: "Smartphones",
-        detail: "",
+        detail: "Descubrí infinitas posibilidades para tus fotos con las 3 cámaras principales de tu equipo. Poné a prueba tu creatividad y jugá con la iluminación, diferentes planos y efectos para obtener grandes resultados.",
         img: "/images/products/D_NQ_NP_2X_685173-MLA49653440486_042022-F.webp"
     },
     {
@@ -14,7 +14,7 @@ const data = [
         price: 46.999,
         stock: 10,
         category: "Smartphones",
-        detail: "",
+        detail: "Descubrí infinitas posibilidades para tus fotos con las 3 cámaras principales de tu equipo. Poné a prueba tu creatividad y jugá con la iluminación, diferentes planos y efectos para obtener grandes resultados.",
         img: "./images/products/D_NQ_NP_2X_854793-MLA50262132804_062022-F.webp"
     },
     {
@@ -23,7 +23,7 @@ const data = [
         price: 69.799,
         stock: 10,
         category: "Smartphones",
-        detail: "",
+        detail: "Descubrí infinitas posibilidades para tus fotos con las 3 cámaras principales de tu equipo. Poné a prueba tu creatividad y jugá con la iluminación, diferentes planos y efectos para obtener grandes resultados.",
         img: "/images/products/D_NQ_NP_2X_966438-MLA48112811958_112021-F.webp"
     },
     {
@@ -32,7 +32,7 @@ const data = [
         price: 75.999,
         stock: 10,
         category: "Smartphones",
-        detail: "",
+        detail: "Descubrí infinitas posibilidades para tus fotos con las 3 cámaras principales de tu equipo. Poné a prueba tu creatividad y jugá con la iluminación, diferentes planos y efectos para obtener grandes resultados.",
         img: "/images/products/D_NQ_NP_2X_878776-MLA48428092348_122021-F.webp"
     },
     {
@@ -78,5 +78,17 @@ export function getItems() {
         setTimeout(() => {
             resolve(data)
         }, 2000)
+    })
+}
+
+export function getSingleItem(itemId) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            let findItem = data.find( item => item.id === itemId)
+            if (findItem)
+                resolve(findItem)
+            else   
+                reject(new Error("Error Item no encontrado"))
+        }, 1500)
     })
 }

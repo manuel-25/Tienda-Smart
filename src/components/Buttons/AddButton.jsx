@@ -1,13 +1,13 @@
 import "./AddButton.css"
 
-function BuyButton (props) {
+function buyButton (props) {
     let backgroundColor = props.backgroundColor
     let color = props.color
     return (
         <div className="btn-container">
-            <button style = {{backgroundColor: backgroundColor, color: color}}>{props.text}</button>
+            <button onClick={props.onAdd} style = {{backgroundColor: backgroundColor, color: color}}>{props.text}</button>
         </div>
     )
 }
 
-export default BuyButton
+export default buyButton

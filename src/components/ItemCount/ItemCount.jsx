@@ -1,6 +1,6 @@
 import React from "react"
 import "./ItemCount.css"
-import BuyButton from "../Buttons/BuyButton"
+import AddButton from "../Buttons/AddButton"
 
 
 function ItemCount ({stock, initial}) {
@@ -30,7 +30,7 @@ function ItemCount ({stock, initial}) {
                 <button onClick={handleAdd}>+</button>
             </div>
             <div className="cart-btn">
-                <BuyButton text="Agregar al Carrito" onAdd={onAdd}/>
+                <AddButton text="Agregar al Carrito" onAdd={onAdd}/>
             </div>
         </div>
     )
