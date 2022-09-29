@@ -1,14 +1,17 @@
 import "./Item.css"
 import ItemCount from "../ItemCount/ItemCount"
+import {Link} from "react-router-dom"
 
 function Card (props) {
+    const urlDetail = `/productos/${props.id}`
+    
     return(
         <div className="item">
             <div className="item-img">
-                <a href="#"><img src={props.img} alt={props.name}></img></a>
+                <Link to={urlDetail}><img src={props.img} alt={props.name}></img></Link>
             </div>
             <div className="item-detail">
-                <h3>{props.name}</h3>
+                <h3>{props.title}</h3>
                 <p></p>
                 <h4>$ {props.price}</h4>
             </div>
