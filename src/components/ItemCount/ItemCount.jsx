@@ -1,10 +1,11 @@
 import React from "react"
 import "./ItemCount.css"
-import AddButton from "../Buttons/AddButton"
+import AddButtonToCart from "../Buttons/AddButtonToCart"
 
 
-function ItemCount ({stock, initial}) {
+function ItemCount ({stock, initial, onAddToCart}) {
     const [count, setCount] = React.useState(initial)
+    console.log(onAddToCart)
 
     function handleAdd() {
         if(count < stock) {
@@ -18,19 +19,15 @@ function ItemCount ({stock, initial}) {
         }
     }
 
-    function onAdd() {
-        alert(`Se agregaron ${count} items al carrito!`)
-    }
-
     return (
         <div>
+            <div className="cart-btn">
+                <AddButtonToCart text="Agregar al Carrito" onAddToCart={onAddToCart} count={count}/>
+            </div>
             <div className="itemCount-container">
                 <button onClick={handleSubstract}>-</button>
-                <span>{count}</span>
+                <span className="itemCounter-number">{count}</span>
                 <button onClick={handleAdd}>+</button>
-            </div>
-            <div className="cart-btn">
-                <AddButton text="Agregar al Carrito" onAdd={onAdd}/>
             </div>
         </div>
     )

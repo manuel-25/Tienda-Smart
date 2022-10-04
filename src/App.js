@@ -12,13 +12,12 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-            <Route path="/categoria/:cat" element={<ItemListContainer/>}/>
+          <Route path="/" element={<ItemListContainer greetings = "Bienvenidos a Tienda Smart"/>}/>
+          <Route path="/categoria/:cat" element={<ItemListContainer/>}/>
 
-            <Route path="/" element={<ItemListContainer greetings = "Bienvenidos a Tienda Smart"/>}/>
-
-            <Route path="/productos/:id" element={<ItemDetailContainer />}/>
+          <Route path="/productos/:id" element={<ItemDetailContainer />}/>
             
-            <Route path="*" element={<h1>404: Pagina no encontrada</h1>}/>
+          <Route path="*" element={<h1>404: Pagina no encontrada</h1>}/>
         </Routes>
       <Footer />
       </BrowserRouter>

@@ -1,4 +1,4 @@
-import "./AddButton.css"
+import "./AddButtonToCart.css"
 
 function BuyButton (props) {
     let backgroundColor = props.backgroundColor

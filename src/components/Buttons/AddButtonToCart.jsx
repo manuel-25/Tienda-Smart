@@ -1,11 +1,12 @@
-import "./AddButton.css"
+import "./AddButtonToCart.css"
 
 function buyButton (props) {
     let backgroundColor = props.backgroundColor
     let color = props.color
+    let style = {backgroundColor: backgroundColor, color: color}
     return (
         <div className="btn-container">
-            <button onClick={props.onAdd} style = {{backgroundColor: backgroundColor, color: color}}>{props.text}</button>
+            <button onClick={() => props.onAddToCart(props.count)} style = {style}>{props.text}</button>
         </div>
     )
 }

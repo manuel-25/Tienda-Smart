@@ -1,5 +1,4 @@
 import "./Item.css"
-import ItemCount from "../ItemCount/ItemCount"
 import {Link} from "react-router-dom"
 
 function Card (props) {
@@ -15,7 +14,6 @@ function Card (props) {
                 <p></p>
                 <h4>$ {props.price}</h4>
             </div>
-            <ItemCount stock={props.stock} initial={1}/>
         </div>
     )
 }

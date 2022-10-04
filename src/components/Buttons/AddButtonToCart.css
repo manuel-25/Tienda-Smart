@@ -1,7 +1,6 @@
 .btn-container button {
     width: 100%;
     max-width: 400px;
-    font-size: 12px;
     letter-spacing: 3px;
     color: #fff;
     background-color: #FF585F;
@@ -10,6 +9,10 @@
     padding: 8px 20px 8px 24px;
     margin-bottom: 20px;
     transition: all 0.2s ease-in;
+}
+
+.itemCounter-number {
+    font-size: 18px;
 }
 
 .btn-container button:hover {
