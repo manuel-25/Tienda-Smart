@@ -5,7 +5,6 @@ import AddButtonToCart from "../Buttons/AddButtonToCart"
 
 function ItemCount ({stock, initial, onAddToCart}) {
     const [count, setCount] = React.useState(initial)
-    console.log(onAddToCart)
 
     function handleAdd() {
         if(count < stock) {

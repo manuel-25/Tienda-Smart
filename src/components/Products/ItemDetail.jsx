@@ -1,22 +1,23 @@
 import "./ItemDetail.css"
 import BuyButton from "../Buttons/BuyButton"
-import {Link, useParams} from "react-router-dom"
-import { useState } from "react"
+import {Link} from "react-router-dom"
+import { useContext, useState } from "react"
 import ItemCount from "../ItemCount/ItemCount"
+import { cartContext } from "../../context/cartContext"
 
-function ItemDetail (props) {
-    let item = props.data
+function ItemDetail ({item}) {
+    const { addItem } = useContext(cartContext)
     const [estadoCart, setEstadoCart] = useState(false);
 
     function handleAddToCart(count) {
-        setEstadoCart(true);
+        setEstadoCart(true)
+        addItem(item, count)
         alert(`Se agregaron ${count} items al carrito!`)
     }
 
     return (
         <div className="main-container">
             <div className="navegacion">
-                {console.log(useParams())}
                 <Link to="/">Volver al listado</Link>
             </div>
             <div className="item-container">

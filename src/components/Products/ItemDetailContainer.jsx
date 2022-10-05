@@ -14,7 +14,7 @@ function ItemDetailContainer () {
 
     return (
         <div>
-            <ItemDetail data={data}/>
+            <ItemDetail item={data}/>
         </div>
     )
 }
