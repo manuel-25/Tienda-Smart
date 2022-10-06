@@ -4,6 +4,7 @@ const data = [
         title: "TCL 20 SE 256 GB nuit black 6 GB RAM",
         price: 61.999,
         stock: 10,
+        oferr: false,
         category: "Smartphones",
         detail: "Descubrí infinitas posibilidades para tus fotos con las 3 cámaras principales de tu equipo. Poné a prueba tu creatividad y jugá con la iluminación, diferentes planos y efectos para obtener grandes resultados.",
         img: "/images/products/D_NQ_NP_2X_685173-MLA49653440486_042022-F.webp"
@@ -215,7 +216,7 @@ export function getItemsByCategory(cat) {
                 resolve(findItem)
             else   
                 reject(new Error("Error Item no encontrado"))
-        }, 500)
+        }, 5500)
     })
 }
 
@@ -229,6 +230,6 @@ export function getSingleItem(itemId) {
                 resolve(findItem)
             else   
                 reject(new Error("Error Item no encontrado"))
-        }, 200)
+        }, 5200)
     })
 }

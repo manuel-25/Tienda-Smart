@@ -30,7 +30,7 @@ function ItemDetail ({item}) {
                         <span className="detail-price">$ {item.price}</span>
                         <p className="detail-description">{item.detail}</p>
                         <div className="buybox">
-                            { estadoCart === false ? 
+                            { !estadoCart ? 
                             <ItemCount stock={item.stock} initial={1} onAddToCart={handleAddToCart}/> : 
                             <BuyButton text="Finalizar Compra" backgroundColor="#3483fa" color="#fff"/> }
                             <p className="stock">Stock Disponible: {item.stock}</p>
