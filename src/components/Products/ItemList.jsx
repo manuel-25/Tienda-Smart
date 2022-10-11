@@ -7,7 +7,8 @@ function ItemList(props) {
                     return (
                         <Item
                             key = {item.id}
-                            name = {item.title}
+                            id = {item.id}
+                            title = {item.title}
                             img = {item.img}
                             price = {item.price}
                             stock = {item.stock}

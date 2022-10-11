@@ -1,0 +1,20 @@
+.footer-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 90px;
+    width: 100%;
+    border-top: 2px solid #FF585F;
+    margin-top: 80px;
+    padding: 10px;
+    background-color: #f3f3f3;
+}
+
+.footer-list{
+    display: flex;
+    justify-content: space-between;
+    width: 50vw;
+    list-style: none;
+    color: #1E55B3;
+}
+

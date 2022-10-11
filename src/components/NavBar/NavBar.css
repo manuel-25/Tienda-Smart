@@ -3,8 +3,9 @@ header{
     align-items: center;
     justify-content: space-around;
     height: 100px;
-    width: 100vw;
+    width: 100%;
     border-bottom: 2px solid #FF585F;
+    background-color: #f3f3f3;
 }
 
 .logo{
@@ -21,7 +22,6 @@ header{
 .menu-link{
     font-size: 18px;
     padding: 10px;
-    border: 1px solid #fff;
     border-radius: 16px;
     text-decoration: none;
     color: #1E55B3;
