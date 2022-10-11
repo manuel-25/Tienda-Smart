@@ -3,6 +3,7 @@ import ItemList from "./ItemList"
 import { getItems, getItemsByCategory} from "../../services/mockAPI"
 import { useEffect, useState } from "react"
 import {useParams} from "react-router-dom"
+import Loader from "../Loader/Loader"
 
 function ItemListContainer (props) {
     const [data, setData] = useState([])
@@ -36,7 +37,7 @@ function ItemListContainer (props) {
                         <h2 style={{color: "aa0033"}}>Error obteniendo los datos</h2>
                         <p>{error}</p>
                     </div>
-                : <h3> Cargando... </h3>
+                : <Loader />
                 }
             </>
         )

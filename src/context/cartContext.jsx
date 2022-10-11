@@ -8,7 +8,8 @@ export default function CartContextProvider({children}) {
     function addItem(item, count) {
         if(isInCart(item.id)) {
             let newCart = cart.map((itemMapeo) => {
-                if(itemMapeo === item.id){
+                console.log(itemMapeo, ' ', item.id)
+                if(itemMapeo.id === item.id){
                     itemMapeo.count += count
                     return itemMapeo
                 } else {
@@ -24,13 +25,29 @@ export default function CartContextProvider({children}) {
     }
 
     function getTotalItemsInCart() {
-        let total = cart.length
+        let total = 0
+        cart.map((itemMapeo) => {
+            return total += itemMapeo.count
+        })
         return total
+    }
+
+    function getSubtotalPrice() {
+        return cart.reduce((acc, item) => acc += item.price * item.count, 0)
     }
 
     function isInCart(id) {
         let found = cart.some(item => item.id === id)
+        console.log(found)
         return found
+    }
+
+    function getCartItems() {
+        return cart
+    }
+
+    function deleteItem(id) {
+        return setCart(cart.filter(item => item.id !== id))
     }
 
     function clear() {
@@ -38,7 +55,7 @@ export default function CartContextProvider({children}) {
     }
 
     return(
-        <cartContext.Provider value={{cart, addItem, getTotalItemsInCart, isInCart, clear}}>
+        <cartContext.Provider value={{cart, addItem, getTotalItemsInCart, isInCart, clear, getCartItems, deleteItem, getSubtotalPrice}}>
             {children}
         </cartContext.Provider>
     )

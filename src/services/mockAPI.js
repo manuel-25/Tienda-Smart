@@ -202,7 +202,7 @@ export function getItems() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(data)
-        }, 500)
+        }, 1500)
     })
 }
 
@@ -216,7 +216,7 @@ export function getItemsByCategory(cat) {
                 resolve(findItem)
             else   
                 reject(new Error("Error Item no encontrado"))
-        }, 5500)
+        }, 1500)
     })
 }
 
@@ -230,6 +230,6 @@ export function getSingleItem(itemId) {
                 resolve(findItem)
             else   
                 reject(new Error("Error Item no encontrado"))
-        }, 5200)
+        }, 1500)
     })
 }

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { getSingleItem } from "../../services/mockAPI"
 import ItemDetail from "./ItemDetail"
 import {useParams} from "react-router-dom"
-import { Jelly } from '@uiball/loaders'
+import Loader from "../Loader/Loader"
 
 function ItemDetailContainer () {
     const [data, setData] = useState({})
@@ -29,11 +29,7 @@ function ItemDetailContainer () {
                         <h2 style={{color: "aa0033"}}>Error obteniendo los datos</h2>
                         <p>{error}</p>
                     </div>
-                : <Jelly 
-                    size={80}
-                    speed={0.9} 
-                    color="black" 
-                />   
+                : <Loader />  
                 }
             </>
         )
