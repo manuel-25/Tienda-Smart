@@ -1,6 +1,6 @@
 import "./ItemListContainer.css"
 import ItemList from "./ItemList"
-import { getItems, getItemsByCategory} from "../../services/mockAPI"
+import { getItems, getItemsByCategory} from "../../services/firestore"
 import { useEffect, useState } from "react"
 import {useParams} from "react-router-dom"
 import Loader from "../Loader/Loader"
@@ -23,8 +23,14 @@ function ItemListContainer (props) {
                 .finally(() => setIsLoading(false))
         } else {
             getItemsByCategory(cat)
-                .then((response) => setData(response))
-                .catch((errormsg) => setError(errormsg.message))
+                .then((response) => {
+                    console.log("respuesta =>>", response)
+                    setData(response)
+                })
+                .catch((errormsg) => {
+                    console.log(errormsg)
+                    setError(errormsg.message)
+                })
                 .finally(() => setIsLoading(false))
         }
     }, [cat])

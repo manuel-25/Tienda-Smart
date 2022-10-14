@@ -75,7 +75,7 @@ const data = [
     {
         id: 9,
         title: "Apple AirPods Pro con estuche de carga MagSafe",
-        price: 37890,
+        price: 37.890,
         stock: 30,
         category: "Accesorios",
         detail: "Los AirPods Pro tienen Cancelación Activa de Ruido para que disfrutes de un sonido inmersivo. Modo Ambiente para que escuches todo lo que pasa a tu alrededor. Resistencia al agua y al sudor(1). Y un ajuste personalizable para que los uses con comodidad todo el día.",
@@ -85,7 +85,7 @@ const data = [
     {
         id: 10,
         title: "CARGADOR MAGSAFE - APPLE",
-        price: 20999,
+        price: 20.999,
         stock: 15,
         category: "Accesorios",
         detail: "Cargador innalambrico MAGSAFE para dispositivos Apple",
@@ -95,10 +95,10 @@ const data = [
     {
         id: 11,
         title: "CGamepad Joystick Bluetooth",
-        price: 3479,
+        price: 3.479,
         stock: 3,
         category: "Accesorios",
-        detail: "Wireless Bluetooth Gamepad Control Joystick y controlador de juegos",
+        detail: "Wireless Bluetooth Gamepad Control Joystick y controlador de juegosHASTAACA",
         color: "Negro",
         img: "/images/products/D_NQ_NP_657068-MLA51279518208_082022-O.webp"
     },
