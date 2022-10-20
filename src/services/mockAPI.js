@@ -6,7 +6,7 @@ const data = [
         stock: 10,
         oferr: false,
         category: "Smartphones",
-        detail: "Descubrí infinitas posibilidades para tus fotos con las 3 cámaras principales de tu equipo. Poné a prueba tu creatividad y jugá con la iluminación, diferentes planos y efectos para obtener grandes resultados.",
+        detail: "LISTODescubrí infinitas posibilidades para tus fotos con las 3 cámaras principales de tu equipo. Poné a prueba tu creatividad y jugá con la iluminación, diferentes planos y efectos para obtener grandes resultados.",
         img: "/images/products/D_NQ_NP_2X_685173-MLA49653440486_042022-F.webp"
     },
     {
@@ -15,7 +15,7 @@ const data = [
         price: 46.999,
         stock: 10,
         category: "Smartphones",
-        detail: "Descubrí infinitas posibilidades para tus fotos con las 3 cámaras principales de tu equipo. Poné a prueba tu creatividad y jugá con la iluminación, diferentes planos y efectos para obtener grandes resultados.",
+        detail: "LISTODescubrí infinitas posibilidades para tus fotos con las 3 cámaras principales de tu equipo. Poné a prueba tu creatividad y jugá con la iluminación, diferentes planos y efectos para obtener grandes resultados.",
         img: "/images/products/D_NQ_NP_2X_854793-MLA50262132804_062022-F.webp"
     },
     {
@@ -78,7 +78,7 @@ const data = [
         price: 37.890,
         stock: 30,
         category: "Accesorios",
-        detail: "Los AirPods Pro tienen Cancelación Activa de Ruido para que disfrutes de un sonido inmersivo. Modo Ambiente para que escuches todo lo que pasa a tu alrededor. Resistencia al agua y al sudor(1). Y un ajuste personalizable para que los uses con comodidad todo el día.",
+        detail: "LISTOLos AirPods Pro tienen Cancelación Activa de Ruido para que disfrutes de un sonido inmersivo. Modo Ambiente para que escuches todo lo que pasa a tu alrededor. Resistencia al agua y al sudor(1). Y un ajuste personalizable para que los uses con comodidad todo el día.",
         color: "Blanco",
         img: "/images/products/D_NQ_NP_2X_631240-MLA48697556561_122021-F.webp"
     },
@@ -98,7 +98,7 @@ const data = [
         price: 3.479,
         stock: 3,
         category: "Accesorios",
-        detail: "Wireless Bluetooth Gamepad Control Joystick y controlador de juegosHASTAACA",
+        detail: "Wireless Bluetooth Gamepad Control Joystick y controlador de juegos",
         color: "Negro",
         img: "/images/products/D_NQ_NP_657068-MLA51279518208_082022-O.webp"
     },
@@ -188,7 +188,7 @@ const data = [
     {
         id: 20,
         title: "Tablet Gadnic Fenix Phone TAB0024D 10.1'' con red móvil 32GB blanca y 2GB de memoria RAM",
-        price: 35699,
+        price: 35.699,
         stock: 0,
         category: "Tablets",
         detail: "Esta tablet Samsung es la compañera ideal, con capacidad de sobra para cada una de tus actividades. El diseño delgado, compacto y portátil, con facilidad para sostener en una mano, lo convierte en una combinación perfecta de rendimiento y versatilidad.",
