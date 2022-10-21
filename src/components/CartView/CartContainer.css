@@ -54,18 +54,41 @@
 .checkout {
     border: 2px solid #1E55B3;
     width: 100%;
-    height: 80px;
+    min-height: 100px;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    flex-direction: column;
+    gap: 10px;
     background-color: #f3f3f3;
     margin-top: 30px;
-    padding: 40px;
+    padding: 20px;
 }
 
-.checkout-subtotal {
+.checkout >* {
     display: flex;
     font-size: 24px;
     color: #6d7f91;
+}
+
+.checkout-subtotal >* {
+    font-weight: 200;
+}
+
+.checkout-delivery >* {
+    font-weight: 200;
+}
+
+.checkout-total {
+    font-weight: 600;
+}
+
+.buyButton {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

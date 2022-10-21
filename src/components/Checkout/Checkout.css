@@ -1,0 +1,16 @@
+.checkout-container {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    padding: 100px;
+    color: #6d7f91;
+}
+
+.checkout-container h2 {
+    color: #00ab66;
+    margin-bottom: 15px;
+}
+
+.checkout-id {
+    color: #FF585F;
+}

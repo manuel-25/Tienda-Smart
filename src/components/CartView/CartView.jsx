@@ -20,6 +20,7 @@ function CartView({item}) {
     function handleSubstract() {
         if(count > 1) {
             setCount(count-1)
+            item.stock = count
         }
     }
 

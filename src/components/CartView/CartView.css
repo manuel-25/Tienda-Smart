@@ -1,6 +1,6 @@
 .cart-item-container {
     display: grid;
-    grid-template-columns: 20% 50% auto;
+    grid-template-columns: 20% 50% auto 10%;
     grid-template-rows: 50% 50%;
     gap: 5px;
     align-items: auto;
@@ -51,6 +51,7 @@
     font-weight: 600;
     color: #6d7f91;
     overflow: hidden;
+    text-align: center;
 }
 
 .cart-detail-container {
