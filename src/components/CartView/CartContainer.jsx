@@ -3,12 +3,14 @@ import React, { useContext } from 'react'
 import { cartContext } from '../../context/cartContext'
 import CartView from "./CartView"
 import { Link } from "react-router-dom"
+import CheckoutForm from "../CheckoutForm/CheckoutForm"
 
 function CartContainer() {
     const { getCartItems, getSubtotalPrice, getTotalItemsInCart} = useContext(cartContext)
     const cartItems = getCartItems()
-    
-    console.log(getTotalItemsInCart)
+
+
+    /* Carrito Vacio */
     if(getTotalItemsInCart() === 0) {
         return (
             <div className="cart-main-container">
@@ -38,12 +40,20 @@ function CartContainer() {
                 })
             }
             <div className='checkout'>
-                <div className="">
-
-                </div>
                 <div className="checkout-subtotal">
                     <h4>Subtotal: $</h4>
                     <span>{getSubtotalPrice()}</span>
+                </div>
+                <div className="checkout-delivery">
+                    <h4>Envio: $</h4>
+                    <span>0</span>
+                </div>
+                <div className="checkout-total">
+                    <h4>Total: $</h4>
+                    <span>{getSubtotalPrice()}</span>
+                </div>
+                <div className="checkoutForm-container">
+                    <CheckoutForm />
                 </div>
             </div>
         </div>

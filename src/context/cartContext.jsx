@@ -50,12 +50,23 @@ export default function CartContextProvider({children}) {
         return setCart(cart.filter(item => item.id !== id))
     }
 
-    function clear() {
+    function clearCart() {
         setCart([])
     }
 
     return(
-        <cartContext.Provider value={{cart, addItem, getTotalItemsInCart, isInCart, clear, getCartItems, deleteItem, getSubtotalPrice}}>
+        <cartContext.Provider 
+        value={{
+                cart, 
+                addItem, 
+                getTotalItemsInCart, 
+                isInCart, 
+                clearCart, 
+                getCartItems, 
+                deleteItem, 
+                getSubtotalPrice
+            }}
+        >
             {children}
         </cartContext.Provider>
     )

@@ -5,7 +5,7 @@ function BuyButton (props) {
     let color = props.color
     return (
         <div className="btn-container">
-            <button style = {{backgroundColor: backgroundColor, color: color}}>{props.text}</button>
+            <button onClick={props.accion} type="submit" style = {{backgroundColor: backgroundColor, color: color}}>{props.text}</button>
         </div>
     )
 }

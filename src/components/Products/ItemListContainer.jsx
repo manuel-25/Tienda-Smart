@@ -1,6 +1,6 @@
 import "./ItemListContainer.css"
 import ItemList from "./ItemList"
-import { getItems, getItemsByCategory} from "../../services/mockAPI"
+import { getItems, getItemsByCategory } from "../../services/firestore"
 import { useEffect, useState } from "react"
 import {useParams} from "react-router-dom"
 import Loader from "../Loader/Loader"
@@ -16,15 +16,19 @@ function ItemListContainer (props) {
     useEffect(() => {
         setData([])
         setIsLoading(true)
-        if(cat === undefined) {
+        if(!cat) {
             getItems()
                 .then((response) => setData(response))
                 .catch((errormsg) => setError(errormsg.message))
                 .finally(() => setIsLoading(false))
         } else {
             getItemsByCategory(cat)
-                .then((response) => setData(response))
-                .catch((errormsg) => setError(errormsg.message))
+                .then((response) => {
+                    setData(response)
+                })
+                .catch((errormsg) => {
+                    setError(errormsg.message)
+                })
                 .finally(() => setIsLoading(false))
         }
     }, [cat])
