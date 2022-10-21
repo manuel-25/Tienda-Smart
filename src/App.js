@@ -8,7 +8,7 @@ import Checkout from './components/Checkout/Checkout';
 
 import { BrowserRouter, Routes, Route} from "react-router-dom"
 import CartContextProvider from './context/cartContext'
-import { exportDataToFirestore } from './services/firestore';
+//import { exportDataToFirestore } from './services/firestore';
 
 function App() {
   return (

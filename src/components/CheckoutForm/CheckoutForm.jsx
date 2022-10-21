@@ -7,7 +7,7 @@ import { cartContext } from '../../context/cartContext'
 
 function CheckoutForm() {
     const navigate = useNavigate()
-    const { getCartItems, getSubtotalPrice} = useContext(cartContext)
+    const { getCartItems, getSubtotalPrice, clearCart} = useContext(cartContext)
     const [dataForm, setDataForm] = useState({
         name:"",
         phone:"",
@@ -33,7 +33,9 @@ function CheckoutForm() {
         }
         createBuyOrder(orderData).then(orderId => {
             navigate(`/checkout/${orderId}`)
+            clearCart()
         })
+
     }
 
   return (

@@ -50,7 +50,7 @@ export default function CartContextProvider({children}) {
         return setCart(cart.filter(item => item.id !== id))
     }
 
-    function clear() {
+    function clearCart() {
         setCart([])
     }
 
@@ -61,7 +61,7 @@ export default function CartContextProvider({children}) {
                 addItem, 
                 getTotalItemsInCart, 
                 isInCart, 
-                clear, 
+                clearCart, 
                 getCartItems, 
                 deleteItem, 
                 getSubtotalPrice
