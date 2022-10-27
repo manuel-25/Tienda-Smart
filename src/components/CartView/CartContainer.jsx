@@ -19,7 +19,7 @@ function CartContainer() {
                     <p> &nbsp;- Carrito de Compras</p>
                 </div>
                 <div className="cart-title" style={{margin: "auto"}}>
-                    <h2>El carrrito de compras esta vacio</h2>
+                    <h2 className="cart-title-empty">El carrrito de compras esta vacio</h2>
                 </div>
             </div>
         )
