@@ -6,21 +6,30 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faX } from '@fortawesome/free-solid-svg-icons'
 
 function CartView({item}) {
-    const { deleteItem } = useContext(cartContext)
+    const { deleteItem, checkStockFromDb, updateCart } = useContext(cartContext)
     const urlDetail = `/productos/${item.id}`
 
-    const [count, setCount] = React.useState(item.stock)
+    const [count, setCount] = React.useState(item.count)
 
     function handleAdd() {
         if(count < item.stock) {
-            setCount(count+1)
+            console.log("no supera stock, count: ", count, " stock: ", item.stock)
+            let isStock = checkStockFromDb(item)
+            if(isStock) {
+                setCount(count+1)
+                item.count = count
+                console.log(item.count)
+                updateCart(item)
+            }
         }
     }
 
     function handleSubstract() {
         if(count > 1) {
             setCount(count-1)
-            item.stock = count
+            item.count = count
+            console.log(item.count)
+            updateCart(item)
         }
     }
 
@@ -35,7 +44,7 @@ function CartView({item}) {
         <div className="cart-detail-container">
             <span className='cart-item-quantity'>
                 <button onClick={handleSubstract}>-</button>
-                <input type="number" name="quantity" defaultValue={item.count} className="itemCounter-number"></input>
+                <span name="quantity" className="itemCounter-number">{item.count}</span>
                 <button onClick={handleAdd}>+</button>
             </span>
             <h6 className='cart-item-price'>$ {item.price}</h6>
