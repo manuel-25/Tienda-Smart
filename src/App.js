@@ -4,7 +4,8 @@ import ItemListContainer from "./components/Products/ItemListContainer.jsx"
 import ItemDetailContainer from './components/Products/ItemDetailContainer'
 import Footer from './components/Footer/Footer'
 import CartContainer from './components/CartView/CartContainer'
-import Checkout from './components/Checkout/Checkout';
+import Checkout from './components/Checkout/Checkout'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 import { BrowserRouter, Routes, Route} from "react-router-dom"
 import CartContextProvider from './context/cartContext'
