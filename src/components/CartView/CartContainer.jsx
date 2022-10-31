@@ -16,7 +16,7 @@ function CartContainer() {
             <div className="cart-main-container">
                 <div className='cart-navegation'>
                     <Link to="/">Volver al Listado </Link>
-                    <p> &nbsp;- Carrito de Compras</p>
+                    <div> &nbsp;- Carrito de Compras</div>
                 </div>
                 <div className="cart-title" style={{margin: "auto"}}>
                     <h2 className="cart-title-empty">El carrrito de compras esta vacio</h2>
@@ -32,7 +32,7 @@ function CartContainer() {
             </div>
             <div className='cart-navegation'>
                 <Link to="/">Volver al Listado </Link>
-                <p> &nbsp;- Carrito de Compras</p>
+                <div> &nbsp;- Carrito de Compras</div>
             </div>
             {
                 cartItems.map((item) => {
@@ -41,15 +41,15 @@ function CartContainer() {
             }
             <div className='checkout'>
                 <div className="checkout-subtotal">
-                    <h4>Subtotal: $</h4>
+                    <div>Subtotal: $</div>
                     <span>{getSubtotalPrice()}</span>
                 </div>
                 <div className="checkout-delivery">
-                    <h4>Envio: $</h4>
+                    <div>Envio: $</div>
                     <span>0</span>
                 </div>
                 <div className="checkout-total">
-                    <h4>Total: $</h4>
+                    <div>Total: $</div>
                     <span>{getSubtotalPrice()}</span>
                 </div>
                 <div className="checkoutForm-container">
