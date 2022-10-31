@@ -24,7 +24,7 @@ function NavBar() {
                                 <Nav.Link><Link to="/categoria/Tablets" style={none}>Tablets</Link></Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link><Link to="/categoria/Accesorios" style={none}>Smartphones</Link></Nav.Link>
+                                <Nav.Link><Link to="/categoria/Accesorios" style={none}>Accesorios</Link></Nav.Link>
                             </Nav.Item>
                         </Nav>
                         <Nav className="justify-content-end">
