@@ -6,6 +6,8 @@
 .navegacion >*{
     text-decoration: none;
     list-style: none;
+    cursor: pointer;
+    color: #1E55B3;
 }
 
 h2 {
