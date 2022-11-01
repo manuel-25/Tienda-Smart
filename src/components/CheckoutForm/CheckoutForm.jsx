@@ -31,6 +31,9 @@ function CheckoutForm() {
             date: new Date(),
             total: getSubtotalPrice()
         }
+        const checkoutForm = document.getElementById('myForm').checkValidity()
+        let isFormValid = (checkoutForm).checkValidity()
+        console.log(isFormValid)
         createBuyOrder(orderData).then(orderId => {
             navigate(`/checkout/${orderId}`)
             clearCart()

@@ -68,7 +68,7 @@ export async function exportDataToFirestore() {
     const data = [
         {
             title: "TCL 20 SE 256 GB nuit black 6 GB RAM",
-            price: 61999,
+            price: 61.999,
             stock: 10,
             oferr: false,
             discount: 10,
@@ -78,7 +78,7 @@ export async function exportDataToFirestore() {
         },
         {
             title: "Moto G22 128 GB cosmic black 4 GB RAM",
-            price: 46999,
+            price: 46.999,
             stock: 10,
             oferr: false,
             discount: 10,
@@ -88,7 +88,7 @@ export async function exportDataToFirestore() {
         },
         {
             title: "Moto G60s 128 GB aqua 6 GB RAM",
-            price: 69799,
+            price: 69.799,
             stock: 10,
             oferr: false,
             discount: 10,
@@ -98,7 +98,7 @@ export async function exportDataToFirestore() {
         },
         {
             title: "Samsung Galaxy A32 128 GB awesome blue 4 GB RAM",
-            price: 75999,
+            price: 75.999,
             stock: 10,
             oferr: false,
             discount: 10,
@@ -108,7 +108,7 @@ export async function exportDataToFirestore() {
         },
         {
             title: "Moto G52 128 GB charcoal grey 6 GB RAM",
-            price: 59999,
+            price: 59.999,
             stock: 10,
             oferr: false,
             discount: 10,
@@ -118,7 +118,7 @@ export async function exportDataToFirestore() {
         },
         {
             title: "Samsung Galaxy A22 5G 128 GB gray 4 GB RAM",
-            price: 59999,
+            price: 59.999,
             stock: 10,
             oferr: false,
             discount: 10,
@@ -128,7 +128,7 @@ export async function exportDataToFirestore() {
         },
         {
             title: "Quantum Q20 Dual SIM 128 GB blanco 4 GB RAM",
-            price: 39999,
+            price: 39.999,
             stock: 10,
             oferr: false,
             discount: 10,
@@ -138,7 +138,7 @@ export async function exportDataToFirestore() {
         },
         {
             title: "TCL 20B 64 GB space gray 4 GB RAM",
-            price: 38799,
+            price: 38.799,
             stock: 10,
             oferr: false,
             discount: 10,
@@ -148,7 +148,7 @@ export async function exportDataToFirestore() {
         },
         {
             title: "Apple AirPods Pro con estuche de carga MagSafe",
-            price: 37890,
+            price: 37.890,
             stock: 30,
             oferr: false,
             discount: 10,
@@ -159,7 +159,7 @@ export async function exportDataToFirestore() {
         },
         {
             title: "CARGADOR MAGSAFE - APPLE",
-            price: 20999,
+            price: 20.999,
             stock: 15,
             oferr: false,
             discount: 4,
@@ -170,7 +170,7 @@ export async function exportDataToFirestore() {
         },
         {
             title: "CGamepad Joystick Bluetooth",
-            price: 3479,
+            price: 3.479,
             stock: 3,
             oferr: false,
             discount: 10,
@@ -192,7 +192,7 @@ export async function exportDataToFirestore() {
         },
         {
             title: "Brazo De Suspensión Celular De Mesa Ajustable Ideal Streming",
-            price: 3699,
+            price: 3.699,
             stock: 14,
             oferr: false,
             discount: 10,
@@ -203,7 +203,7 @@ export async function exportDataToFirestore() {
         },
         {
             title: "Ariculares in-ear Motorola Earbuds 2 blanco",
-            price: 1399,
+            price: 1.399,
             stock: 30,
             oferr: false,
             discount: 10,
@@ -214,7 +214,7 @@ export async function exportDataToFirestore() {
         },
         {
             title: "Funda Ringke Fusion Original Para iPhone 13 13 Pro Max",
-            price: 3470,
+            price: 3.470,
             stock: 6,
             oferr: false,
             discount: 10,
@@ -236,7 +236,7 @@ export async function exportDataToFirestore() {
         },
         {
             title: "Apple iPad (9ª generación) 10.2 Wi-Fi 256GB - Gris espacial",
-            price: 119259,
+            price: 119.259,
             stock: 2,
             oferr: false,
             discount: 10,
@@ -248,7 +248,7 @@ export async function exportDataToFirestore() {
         },
         {
             title: "Tablet Samsung Galaxy Tab A7 Lite SM-T220 8.7'' 32GB gris y 3GB de memoria RAM",
-            price: 34899,
+            price: 34.899,
             stock: 9,
             oferr: false,
             discount: 10,
@@ -260,7 +260,7 @@ export async function exportDataToFirestore() {
         },
         {
             title: "Tablet Pcbox Flash PCB-T104 10.1'' 16GB azul oscuro y 2GB de memoria RAM",
-            price: 22879,
+            price: 22.879,
             stock: 0,
             oferr: false,
             discount: 10,
@@ -272,7 +272,7 @@ export async function exportDataToFirestore() {
         },
         {
             title: "Tablet Gadnic Fenix Phone TAB0024D 10.1'' con red móvil 32GB blanca y 2GB de memoria RAM",
-            price: 35699,
+            price: 35.699,
             stock: 0,
             oferr: true,
             discount: 20,

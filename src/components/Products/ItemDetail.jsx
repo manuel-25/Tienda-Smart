@@ -23,7 +23,7 @@ function ItemDetail ({item}) {
     return (
         <div className="main-container">
             <div className="navegacion">
-                <div onClick={handleNavigate}>Volver al listado</div>
+                <div onClick={handleNavigate}>Volver atras</div>
             </div>
             <div className="item-container">
                 <div className="image-container">

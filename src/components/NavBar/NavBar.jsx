@@ -3,7 +3,7 @@ import CartWidget from "../CartWidget/CartWidget";
 import {Link} from "react-router-dom"
 import {Navbar, Container, Nav, NavDropdown, Form, Button} from "react-bootstrap"
 function NavBar() {
-    let none = { textDecoration: 'none' }
+    let color = { color: '#1E55B3' }
     return (
         <div>
             <Navbar bg="light" variant="light" expand="md">
@@ -18,13 +18,13 @@ function NavBar() {
                             navbarScroll
                         >
                             <Nav.Item>
-                                <Nav.Link><Link to="/categoria/Smartphones" style={none}>Smartphones</Link></Nav.Link>
+                                <Nav.Link as={Link} to="/categoria/Smartphones" style={color}>Smartphones</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link><Link to="/categoria/Tablets" style={none}>Tablets</Link></Nav.Link>
+                                <Nav.Link as={Link} to="/categoria/Tablets" style={color}>Tablets</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link><Link to="/categoria/Accesorios" style={none}>Accesorios</Link></Nav.Link>
+                                <Nav.Link as={Link} to="/categoria/Accesorios" style={color}>Accesorios</Nav.Link>
                             </Nav.Item>
                         </Nav>
                         <Nav className="justify-content-end">
@@ -33,28 +33,6 @@ function NavBar() {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-                    {/*<NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                    <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.2">
-                        Another action
-                    </NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action/3.4">
-                        Separated link
-                    </NavDropdown.Item>
-                    </NavDropdown>*/}
-                {/*<ul className="menu">
-                    <li className="menu-item">
-                        <Link to="/categoria/Smartphones" className="menu-link">Smartphones</Link>
-                    </li>
-                    <li className="menu-item">
-                        <Link to="/categoria/Tablets" className="menu-link">Tablets</Link>
-                    </li>
-                    <li className="menu-item">
-                        <Link to="/categoria/Accesorios" className="menu-link">Accesorios</Link>
-                    </li>
-                </ul>*/}
         </div>
     )
 }
