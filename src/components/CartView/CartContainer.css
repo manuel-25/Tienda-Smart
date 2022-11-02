@@ -50,12 +50,15 @@
     margin-bottom: 30px;
 }
 
-.cart-navegation a {
+.cart-navegate {
+    cursor: pointer;
+    color: #1E55B3;
     text-decoration: none;
 }
 
 .checkout {
     border: 2px solid #1E55B3;
+    border-radius: 5px;
     width: 100%;
     min-height: 100px;
     height: auto;
