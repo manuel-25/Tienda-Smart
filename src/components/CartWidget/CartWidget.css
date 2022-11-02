@@ -1,5 +1,15 @@
-.cart-container{
-    font-size: 18px;
+.widget-container{
+    display: flex;
+    font-size: 14px;
     color: #1E55B3;
     padding: 10px;
+}
+
+.widget-link {
+    margin-right: 10px;
+}
+
+.widget-details {
+    display: flex;
+    color: #1E55B3;
 }

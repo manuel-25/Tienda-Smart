@@ -1,13 +1,14 @@
 import "./ItemDetail.css"
 import BuyButton from "../Buttons/BuyButton"
-import {Link} from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useContext, useState } from "react"
 import ItemCount from "../ItemCount/ItemCount"
 import { cartContext } from "../../context/cartContext"
 
 function ItemDetail ({item}) {
     const { addItem } = useContext(cartContext)
-    const [estadoCart, setEstadoCart] = useState(false);
+    const [estadoCart, setEstadoCart] = useState(false)
+    const navigate = useNavigate()
 
     function handleAddToCart(count) {
         setEstadoCart(true)
@@ -15,10 +16,14 @@ function ItemDetail ({item}) {
         alert(`Se agregaron ${count} items al carrito!`)
     }
 
+    function handleNavigate(e) {
+        navigate(-1)
+    }
+
     return (
         <div className="main-container">
             <div className="navegacion">
-                <Link to="/">Volver al listado</Link>
+                <div onClick={handleNavigate}>Volver atras</div>
             </div>
             <div className="item-container">
                 <div className="image-container">

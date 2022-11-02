@@ -31,6 +31,9 @@ function CheckoutForm() {
             date: new Date(),
             total: getSubtotalPrice()
         }
+        const checkoutForm = document.getElementById('myForm').checkValidity()
+        let isFormValid = (checkoutForm).checkValidity()
+        console.log(isFormValid)
         createBuyOrder(orderData).then(orderId => {
             navigate(`/checkout/${orderId}`)
             clearCart()
@@ -39,7 +42,7 @@ function CheckoutForm() {
     }
 
   return (
-    <div className="form-container">
+    <div className="form-container" id="checkoutForm">
             <form onSubmit={handleCheckout}>
                 <div className="form-item">
                     <label htmlFor="name">Nombre: </label>
