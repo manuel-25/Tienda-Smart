@@ -23,6 +23,10 @@ function CheckoutForm() {
         setDataForm(newDataForm)
     }
 
+    function formValidation(form) {
+        console.log(form)
+    }
+
     function handleCheckout(event) {
         event.preventDefault()
         const orderData = {
@@ -31,9 +35,9 @@ function CheckoutForm() {
             date: new Date(),
             total: getSubtotalPrice()
         }
-        const checkoutForm = document.getElementById('myForm').checkValidity()
-        let isFormValid = (checkoutForm).checkValidity()
-        console.log(isFormValid)
+        const checkoutForm = document.getElementById('checkoutForm')
+        let isValid = checkoutForm.checkValidity()
+        checkoutForm.checkValidity()
         createBuyOrder(orderData).then(orderId => {
             navigate(`/checkout/${orderId}`)
             clearCart()
