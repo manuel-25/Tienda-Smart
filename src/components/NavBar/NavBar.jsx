@@ -28,7 +28,7 @@ function NavBar() {
                             </Nav.Item>
                         </Nav>
                         <Nav className="justify-content-end">
-                            <Nav.Link><CartWidget /></Nav.Link>
+                            <Nav.Link as={Link} to="/cart"><CartWidget /></Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
