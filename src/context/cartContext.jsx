@@ -1,4 +1,5 @@
 import React, {useState, createContext} from "react"
+import { getItems } from "../services/firestore"
 
 const cartContext = createContext()
 
@@ -8,7 +9,6 @@ export default function CartContextProvider({children}) {
     function addItem(item, count) {
         if(isInCart(item.id)) {
             let newCart = cart.map((itemMapeo) => {
-                console.log(itemMapeo, ' ', item.id)
                 if(itemMapeo.id === item.id){
                     itemMapeo.count += count
                     return itemMapeo
@@ -38,7 +38,6 @@ export default function CartContextProvider({children}) {
 
     function isInCart(id) {
         let found = cart.some(item => item.id === id)
-        console.log(found)
         return found
     }
 
@@ -54,6 +53,29 @@ export default function CartContextProvider({children}) {
         setCart([])
     }
 
+    async function checkStockFromDb(item) {
+        if(isInCart(item.id)) {
+            getItems()
+            .then(data => {
+                let found = data.find(dbItem => dbItem.id === item.id)
+                if((found) && (item.count < found.stock)){
+                    return true
+                } else return false
+            })
+            .catch((err) => {console.log(err)})
+        }
+    }
+
+    function updateCart(item) {
+        let newCart = cart.map( itemMapeo => {
+            if(itemMapeo.id === item.id) {
+                itemMapeo = item
+            }
+            return itemMapeo
+        })
+        setCart(newCart)
+    }
+
     return(
         <cartContext.Provider 
         value={{
@@ -64,7 +86,9 @@ export default function CartContextProvider({children}) {
                 clearCart, 
                 getCartItems, 
                 deleteItem, 
-                getSubtotalPrice
+                getSubtotalPrice,
+                checkStockFromDb,
+                updateCart
             }}
         >
             {children}
