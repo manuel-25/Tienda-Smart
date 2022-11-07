@@ -10,6 +10,10 @@ function ItemDetail ({item}) {
     const [estadoCart, setEstadoCart] = useState(false)
     const navigate = useNavigate()
 
+
+    let discount = item.discount / 100
+    let discountPrice = Math.round(item.price - (item.price * discount))
+
     function handleAddToCart(count) {
         setEstadoCart(true)
         addItem(item, count)
@@ -21,7 +25,37 @@ function ItemDetail ({item}) {
     }
 
     return (
-        <div className="main-container">
+        <div className="Detail__main-container">
+            <section className="content">
+                <article className="gallery">
+                    <div className="gallery__image-container">
+                        <img src={item.img} alt={item.title}></img>
+                    </div>
+                </article>
+
+                <article className="details">
+                    <h2 className="details__title">{item.title}</h2>
+                    <p className="details__description">{item.detail}</p>
+                    <div className="details__prices">
+                        <p className="details__now">{item.oferr === true ? "$" + discountPrice : "$" + item.price}
+                            <span className="details__discount" style={{ visibility: item.oferr === true ? 'visible': 'hidden'}}>
+                                {item.oferr === true ? item.discount + "%" : null}
+                            </span>
+                        </p>
+                        <p className="details__before">{item.oferr === true ? "$" + item.price : null}</p>
+                    </div>
+                    <div className="details__product-quantity">
+                        { !estadoCart ? 
+                            <ItemCount stock={item.stock} initial={1} onAddToCart={handleAddToCart}/> : 
+                            <Link to="/cart"><BuyButton text="Ir al carrito" backgroundColor="#3483fa" color="#fff"/></Link>
+                        }
+                    </div>
+                </article>
+
+            </section>
+
+
+            {/*
             <div className="navegacion">
                 <div onClick={handleNavigate}>Volver atras</div>
             </div>
@@ -43,6 +77,7 @@ function ItemDetail ({item}) {
                     </div>
                 </div>
             </div>
+            */}
         </div>
     )
 }

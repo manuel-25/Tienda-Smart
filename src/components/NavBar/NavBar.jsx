@@ -3,10 +3,10 @@ import CartWidget from "../CartWidget/CartWidget";
 import {Link} from "react-router-dom"
 import {Navbar, Container, Nav, NavDropdown, Form, Button} from "react-bootstrap"
 function NavBar() {
-    let color = { color: '#1E55B3' }
+    let color = { color: '#fff' }
     return (
         <div>
-            <Navbar bg="light" variant="light" expand="md">
+            <Navbar bg="dark" variant="dark" expand="md">
                 <Container fluid>
                     <Navbar.Brand><Link to="/"><img className="logo" src={"/images/tiendaSmartLogo.png"} alt="Logo"></img></Link></Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
@@ -25,6 +25,9 @@ function NavBar() {
                             </Nav.Item>
                             <Nav.Item>
                                 <Nav.Link as={Link} to="/categoria/Accesorios" style={color}>Accesorios</Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link as={Link} to="/" style={color}>Contacto</Nav.Link>
                             </Nav.Item>
                         </Nav>
                         <Nav className="justify-content-end">

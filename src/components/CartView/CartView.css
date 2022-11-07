@@ -19,7 +19,6 @@
     height: auto;
     max-height: 100%;
     max-width: 150px;
-    /*border: 1px solid yellow;*/
 }
 
 .cart-item-img img {
@@ -34,7 +33,6 @@
     align-items: center;
     grid-column: 2 / 4;
     width: 100%;
-    /*border: 1px solid blue;*/
     overflow: hidden;
 }
 
@@ -55,7 +53,6 @@
 }
 
 .cart-detail-container {
-    /*border: 1px solid pink;*/
     display: flex;
     align-items: center;
     justify-content: space-around;

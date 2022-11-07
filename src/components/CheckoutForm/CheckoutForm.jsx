@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { createBuyOrder } from "../../services/firestore"
 import { useNavigate } from "react-router-dom"
 import BuyButton from '../Buttons/BuyButton'
@@ -13,6 +13,8 @@ function CheckoutForm() {
         phone:"",
         email:""
     })
+    const [errorForm, setErrorForm] = useState({})
+
 
     function inputChangeHandler(event) {
         let inputName = event.target.name
@@ -23,10 +25,30 @@ function CheckoutForm() {
         setDataForm(newDataForm)
     }
 
-    function formValidation(form) {
-        console.log(form)
+    function validateForm() {
+        let errorName = dataForm.name.length <= 3
+        //let errorPhone = dataForm.phone.length <= 10
+
+        //let regexEmail = /^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$/
+        //let errorEmail = dataForm.email.match(regexEmail)
+
+        const newErrorForm = {...errorForm}
+
+        if(errorName) newErrorForm.name = {
+            type: "name",
+            message: "El nombre debe contener al menos 10 caracteres"
+        }
+        else delete newErrorForm.name
+
+        setErrorForm(newErrorForm)
     }
 
+    useEffect( () => {
+        validateForm()
+    }, [dataForm])
+
+
+    //Submit form 
     function handleCheckout(event) {
         event.preventDefault()
         const orderData = {
@@ -35,9 +57,6 @@ function CheckoutForm() {
             date: new Date(),
             total: getSubtotalPrice()
         }
-        const checkoutForm = document.getElementById('checkoutForm')
-        let isValid = checkoutForm.checkValidity()
-        checkoutForm.checkValidity()
         createBuyOrder(orderData).then(orderId => {
             navigate(`/checkout/${orderId}`)
             clearCart()
@@ -59,6 +78,13 @@ function CheckoutForm() {
                         required
                     />
                 </div>
+                {
+                    Object.keys(errorForm).map((err) => (
+                        <span key="{errorForm.type}" className="error-form">
+                            {errorForm[err].message}
+                        </span>
+                    ))
+                }
 
                 <div className="form-item">
                     <label htmlFor="telefono">Telefono: </label>
