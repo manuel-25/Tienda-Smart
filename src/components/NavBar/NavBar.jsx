@@ -1,7 +1,7 @@
 import "./NavBar.css";
 import CartWidget from "../CartWidget/CartWidget";
 import {Link} from "react-router-dom"
-import {Navbar, Container, Nav, NavDropdown, Form, Button} from "react-bootstrap"
+import {Navbar, Container, Nav} from "react-bootstrap"
 function NavBar() {
     let color = { color: '#fff' }
     return (
