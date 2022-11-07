@@ -1,20 +1,23 @@
 import "./Item.css"
 import {Link} from "react-router-dom"
 
-function Card (props) {
-    const urlDetail = `/productos/${props.id}`
+function Card ({item}) {
+    const urlDetail = `/productos/${item.id}`
     
     return(
-        <div className="item">
+        <article className="item">
             <div className="item-img">
-                <Link to={urlDetail}><img src={props.img} alt={props.name}></img></Link>
+                <Link to={urlDetail}><img src={item.img} alt={item.name}></img></Link>
             </div>
             <div className="item-detail">
-                <h3>{props.title}</h3>
+                <h3>{item.title}</h3>
                 <p></p>
-                <h4>$ {props.price}</h4>
+                <h4>$ {item.price}</h4>
             </div>
-        </div>
+            <div className="item-offer" style={{ visibility: item.oferr ? 'visible': 'hidden'}}>
+                {item.oferr ? item.discount + "%" : null}
+            </div>
+        </article>
     )
 }
 

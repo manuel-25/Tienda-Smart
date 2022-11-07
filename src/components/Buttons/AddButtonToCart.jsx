@@ -6,7 +6,7 @@ function buyButton (props) {
     let style = {backgroundColor: backgroundColor, color: color}
     return (
         <div className="btn-container">
-            <button onClick={() => props.onAddToCart(props.count)} style = {style}>{props.text}</button>
+            <button onClick={() => props.onAddToCart(props.count)} style = {style}  disabled={props.text === "No stock" ? "true" : "false"}>{props.text}</button>
         </div>
     )
 }

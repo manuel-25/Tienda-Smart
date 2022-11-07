@@ -52,12 +52,12 @@ function ItemDetail ({item}) {
                     <h2 className="details__title">{item.title}</h2>
                     <p className="details__description">{item.detail}</p>
                     <div className="details__prices">
-                        <p className="details__now">{item.oferr === true ? "$" + discountPrice : "$" + item.price}
-                            <span className="details__discount" style={{ visibility: item.oferr === true ? 'visible': 'hidden'}}>
-                                {item.oferr === true ? item.discount + "%" : null}
+                        <p className="details__now">{item.oferr ? "$" + discountPrice : "$" + item.price}
+                            <span className="details__discount" style={{ visibility: item.oferr ? 'visible': 'hidden'}}>
+                                {item.oferr ? item.discount + "%" : null}
                             </span>
                         </p>
-                        <p className="details__before">{item.oferr === true ? "$" + item.price : null}</p>
+                        <p className="details__before">{item.oferr ? "$" + item.price : null}</p>
                     </div>
                     <div className="details__product-quantity">
                         { !estadoCart ? 

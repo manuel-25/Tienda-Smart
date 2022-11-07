@@ -2,7 +2,7 @@ import "./CartContainer.css"
 import React, { useContext } from 'react'
 import { cartContext } from '../../context/cartContext'
 import CartView from "./CartView"
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import CheckoutForm from "../CheckoutForm/CheckoutForm"
 
 function CartContainer() {
