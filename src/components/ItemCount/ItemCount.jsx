@@ -4,7 +4,7 @@ import AddButtonToCart from "../Buttons/AddButtonToCart"
 
 
 function ItemCount ({stock, initial, onAddToCart}) {
-    const [count, setCount] = React.useState(initial)
+    const [count, setCount] = React.useState(initial === 0 ? 0 : initial)
 
     function handleAdd() {
         if(count < stock) {
@@ -21,9 +21,9 @@ function ItemCount ({stock, initial, onAddToCart}) {
     return (
         <div>
             <div className="cart-btn">
-                <AddButtonToCart text="Agregar al Carrito" onAddToCart={onAddToCart} count={count}/>
+                <AddButtonToCart text={stock > 0 ? "Add to cart" : "No stock"} onAddToCart={onAddToCart} count={count}/>
             </div>
-            <div className="itemCount-container">
+            <div className="itemCount-container" style={{display: stock > 0 ? "flex" : "none"}}>
                 <button onClick={handleSubstract}>-</button>
                 <span className="itemCounter-number">{count}</span>
                 <button onClick={handleAdd}>+</button>
