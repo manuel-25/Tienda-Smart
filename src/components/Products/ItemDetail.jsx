@@ -27,7 +27,8 @@ function ItemDetail ({item}) {
     }
 
     let discount = item.discount / 100
-    let discountPrice = Math.round(item.price - (item.price * discount))
+    let discountPrice = item.price - (item.price * discount)
+    discountPrice = discountPrice.toFixed(3)
 
     function handleAddToCart(count) {
         setEstadoCart(true)
@@ -41,6 +42,7 @@ function ItemDetail ({item}) {
 
     return (
         <div className="Detail__main-container">
+            <div className="Detail__navegation" onClick={handleNavigate}>Volver atras</div>
             <section className="content">
                 <article className="gallery">
                     <div className="gallery__image-container">
@@ -65,35 +67,10 @@ function ItemDetail ({item}) {
                             <Link to="/cart"><BuyButton text="Ir al carrito" backgroundColor="#3483fa" color="#fff"/></Link>
                         }
                         <ToastContainer />
+                        <div className="details__product-stock">Stock Disponible: {item.stock}</div>
                     </div>
                 </article>
-
             </section>
-
-
-            {/*
-            <div className="navegacion">
-                <div onClick={handleNavigate}>Volver atras</div>
-            </div>
-            <div className="item-container">
-                <div className="image-container">
-                    <img src={item.img} alt={item.title}></img>
-                </div>
-                <div className="item-detail-container">
-                    <div className="item-detail">
-                        <h2>{item.title}</h2>
-                        <span className="detail-price">$ {item.price}</span>
-                        <p className="detail-description">{item.detail}</p>
-                        <div className="buybox">
-                            { !estadoCart ? 
-                            <ItemCount stock={item.stock} initial={1} onAddToCart={handleAddToCart}/> : 
-                            <Link to="/cart"><BuyButton text="Finalizar Compra" backgroundColor="#3483fa" color="#fff"/></Link> }
-                            <p className="stock">Stock Disponible: {item.stock}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            */}
         </div>
     )
 }

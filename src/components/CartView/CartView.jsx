@@ -13,12 +13,10 @@ function CartView({item}) {
 
     function handleAdd() {
         if(count < item.stock) {
-            console.log("no supera stock, count: ", count, " stock: ", item.stock)
             let isStock = checkStockFromDb(item)
             if(isStock) {
                 setCount(count+1)
                 item.count = count
-                console.log(item.count)
                 updateCart(item)
             }
         }
@@ -28,7 +26,6 @@ function CartView({item}) {
         if(count > 1) {
             setCount(count-1)
             item.count = count
-            console.log(item.count)
             updateCart(item)
         }
     }
@@ -44,7 +41,7 @@ function CartView({item}) {
         <div className="cart-detail-container">
             <span className='cart-item-quantity'>
                 <button onClick={handleSubstract}>-</button>
-                <span name="quantity" className="itemCounter-number">{item.count}</span>
+                <span name="quantity" className="itemCounter-number">{count}</span>
                 <button onClick={handleAdd}>+</button>
             </span>
             <h6 className='cart-item-price'>$ {item.price}</h6>
