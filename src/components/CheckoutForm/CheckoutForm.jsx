@@ -61,7 +61,7 @@ function CheckoutForm() {
             navigate(`/checkout/${orderId}`)
             clearCart()
         })
-
+        
     }
 
   return (

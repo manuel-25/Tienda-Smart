@@ -1,7 +1,9 @@
+@import "../../variables.css";
+
 .widget-container{
     display: flex;
     font-size: 14px;
-    color: #1E55B3;
+    color: #fff;
     padding: 10px;
 }
 
@@ -11,5 +13,9 @@
 
 .widget-details {
     display: flex;
-    color: #1E55B3;
+    color: #fff;
+}
+
+.widget__counter--price {
+    color: var(--green-color);
 }

@@ -5,11 +5,26 @@ import { useContext, useState } from "react"
 import ItemCount from "../ItemCount/ItemCount"
 import { cartContext } from "../../context/cartContext"
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function ItemDetail ({item}) {
     const { addItem } = useContext(cartContext)
     const [estadoCart, setEstadoCart] = useState(false)
     const navigate = useNavigate()
 
+    const notify = () => {
+        toast.success('Item agregado al carrito!', {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        })
+    }
 
     let discount = item.discount / 100
     let discountPrice = Math.round(item.price - (item.price * discount))
@@ -17,7 +32,7 @@ function ItemDetail ({item}) {
     function handleAddToCart(count) {
         setEstadoCart(true)
         addItem(item, count)
-        alert(`Se agregaron ${count} items al carrito!`)
+        notify()
     }
 
     function handleNavigate(e) {
@@ -49,6 +64,7 @@ function ItemDetail ({item}) {
                             <ItemCount stock={item.stock} initial={1} onAddToCart={handleAddToCart}/> : 
                             <Link to="/cart"><BuyButton text="Ir al carrito" backgroundColor="#3483fa" color="#fff"/></Link>
                         }
+                        <ToastContainer />
                     </div>
                 </article>
 
