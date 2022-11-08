@@ -6,6 +6,8 @@
   <br>
 </h1>
 
+![TiendaSmartGithub](https://user-images.githubusercontent.com/73025455/200445644-48212214-413e-4b11-a4f3-d0df5aa7310d.gif)
+
 <p>
 Responsive E-Commerce website built on 
 <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB"> </img>
