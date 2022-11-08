@@ -1,117 +1,92 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { createBuyOrder } from "../../services/firestore"
 import { useNavigate } from "react-router-dom"
 import BuyButton from '../Buttons/BuyButton'
 import { cartContext } from '../../context/cartContext'
+import { Formik } from "formik"
+import "./CheckoutForm.css"
 
 
 function CheckoutForm() {
     const navigate = useNavigate()
     const { getCartItems, getSubtotalPrice, clearCart} = useContext(cartContext)
-    const [dataForm, setDataForm] = useState({
-        name:"",
-        phone:"",
-        email:""
-    })
-    const [errorForm, setErrorForm] = useState({})
-
-
-    function inputChangeHandler(event) {
-        let inputName = event.target.name
-        let value = event.target.value
-
-        const newDataForm = { ...dataForm}
-        newDataForm[inputName] = value
-        setDataForm(newDataForm)
-    }
-
-    function validateForm() {
-        let errorName = dataForm.name.length <= 3
-        //let errorPhone = dataForm.phone.length <= 10
-
-        //let regexEmail = /^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$/
-        //let errorEmail = dataForm.email.match(regexEmail)
-
-        const newErrorForm = {...errorForm}
-
-        if(errorName) newErrorForm.name = {
-            type: "name",
-            message: "El nombre debe contener al menos 10 caracteres"
-        }
-        else delete newErrorForm.name
-
-        setErrorForm(newErrorForm)
-    }
-
-    useEffect( () => {
-        validateForm()
-    }, [dataForm])
-
-
-    //Submit form 
-    function handleCheckout(event) {
-        event.preventDefault()
-        const orderData = {
-            buyer: dataForm,
-            items: getCartItems(),
-            date: new Date(),
-            total: getSubtotalPrice()
-        }
-        createBuyOrder(orderData).then(orderId => {
-            navigate(`/checkout/${orderId}`)
-            clearCart()
-        })
-        
-    }
 
   return (
-    <div className="form-container" id="checkoutForm">
-            <form onSubmit={handleCheckout}>
-                <div className="form-item">
-                    <label htmlFor="name">Nombre: </label>
-                    <input
-                        value={dataForm.name}
-                        onChange={inputChangeHandler}
-                        name="name"
-                        type="text"
-                        placeholder="Nombre"
-                        required
-                    />
-                </div>
-                {
-                    Object.keys(errorForm).map((err) => (
-                        <span key="{errorForm.type}" className="error-form">
-                            {errorForm[err].message}
-                        </span>
-                    ))
+    <div className="CartForm__container" id="checkoutForm">
+        <h4 className='CartForm__title'>Complete los datos:</h4>
+        <Formik
+            initialValues={{
+                name: '',
+                email: ''
+            }}
+            validate={(values) => {
+                let validateError = {}
+
+                //Validate name
+                if(!values.name) {
+                    validateError.name = 'Por favor ingresa un nombre'
+                } else if(!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(values.name)) {
+                    validateError.name = 'El nombre solo puede contener letras y espacios'
                 }
 
-                <div className="form-item">
-                    <label htmlFor="telefono">Telefono: </label>
-                    <input
-                        value={dataForm.phone}
-                        onChange={inputChangeHandler}
-                        name="phone"
-                        type="text"
-                        placeholder="Telefono"
-                        required
-                    />
-                </div>
+                //Validate email
+                if(!values.email) {
+                    validateError.email = 'Por favor ingresa tu email'
+                } else if(!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(values.email)) {
+                    validateError.email = 'Debes ingresar un email valido'
+                }
 
-                <div className="form-item">
-                    <label htmlFor="email">Email: </label>
-                    <input
-                        value={dataForm.mail}
-                        onChange={inputChangeHandler}
-                        name="email"
-                        type="text"
-                        placeholder="Mail"
-                        required
-                    />
-                </div>
-                <BuyButton accion={handleCheckout} text="Finalizar Compra"/>
-            </form>
-        </div>
+                return validateError
+            }}
+            onSubmit={(valores, {resetForm}) => {
+                const orderData = {
+                    buyer: {
+                        name: valores.name,
+                        email: valores.email
+                    },
+                    items: getCartItems(),
+                    date: new Date(),
+                    total: getSubtotalPrice()
+                }
+                resetForm()
+                createBuyOrder(orderData).then(orderId => {
+                    navigate(`/checkout/${orderId}`)
+                    clearCart()
+                })
+            }}
+        >
+            {( {values, errors, touched, handleSubmit, handleChange, handleBlur} ) => (
+                <form className="CartForm" onSubmit={handleSubmit}>
+                    <div className="CartForm__input--name">
+                        <input
+                            name="name"
+                            type="text"
+                            placeholder="Nombre"
+                            value={values.name}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                        />
+                    </div>
+                    {touched.name && errors.name && <div className='CartForm__error'>{errors.name}</div>}
+
+                    <div className="CartForm__input--email">
+                        <input
+                            name="email"
+                            type="text"
+                            placeholder="Email"
+                            value={values.email}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                        />
+                    </div>
+                    {touched.email && errors.email && <div className='CartForm__error'>{errors.email}</div>}
+
+                    <BuyButton text="Finalizar Compra"/>
+                </form>
+            )}
+            
+        </Formik>
+    </div>
   )
 }
 
