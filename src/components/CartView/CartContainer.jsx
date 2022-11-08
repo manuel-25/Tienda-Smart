@@ -56,9 +56,7 @@ function CartContainer() {
                     <div>Total: $</div>
                     <span>{getSubtotalPrice()}</span>
                 </div>
-                <div className="checkoutForm-container">
-                    <CheckoutForm />
-                </div>
+                <CheckoutForm />
             </div>
         </div>
     )

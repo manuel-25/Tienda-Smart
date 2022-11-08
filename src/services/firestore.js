@@ -287,7 +287,6 @@ export async function exportDataToFirestore() {
 
     for (let item of data){
         const newDoc = await addDoc(collectionRef, item)
-        console.log("Document created: ", newDoc.id)
     }
 }
 
