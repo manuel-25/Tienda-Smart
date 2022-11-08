@@ -72,7 +72,7 @@ This software uses the following technologies:
 
 ## Packages
 
-This software uses the following technologies:
+This software uses the following packages:
 
 - NodeJs
 - Bootstrap
