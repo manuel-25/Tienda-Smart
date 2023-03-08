@@ -34,7 +34,7 @@ export default function CartContextProvider({children}) {
 
     function getSubtotalPrice() {
         let subTotal = cart.reduce((acc, item) => acc += item.price * item.count, 0)
-        return subTotal.toFixed(3)
+        return subTotal
     }
 
     function isInCart(id) {

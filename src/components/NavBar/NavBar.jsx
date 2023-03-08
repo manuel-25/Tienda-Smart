@@ -1,42 +1,43 @@
 import "./NavBar.css";
 import CartWidget from "../CartWidget/CartWidget";
-import {Link} from "react-router-dom"
-import {Navbar, Container, Nav} from "react-bootstrap"
+import { Link, NavLink } from "react-router-dom"
+import { useRef } from 'react';
+
 function NavBar() {
-    let color = { color: '#fff' }
+    //const hamburger = document.querySelector('.hamburger')
+    const hamburgerRef = useRef(null);
+
+    function handleHamburger() {
+        hamburgerRef.current.classList.toggle('is-active');
+      }
+
+
     return (
-        <div>
-            <Navbar bg="dark" variant="dark" expand="md">
-                <Container fluid>
-                    <Navbar.Brand><Link to="/"><img className="logo" src={"/images/tiendaSmartLogo.png"} alt="Logo"></img></Link></Navbar.Brand>
-                    <Navbar.Toggle aria-controls="navbarScroll" />
-                    <Navbar.Collapse id="navbarScroll">
-                        <Nav 
-                            defaultActiveKey="/" 
-                            className="me-auto my-2 my-lg-0" 
-                            style={{ maxHeight: '100px' }}
-                            navbarScroll
-                        >
-                            <Nav.Item>
-                                <Nav.Link as={Link} to="/categoria/Smartphones" style={color}>Smartphones</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link as={Link} to="/categoria/Tablets" style={color}>Tablets</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link as={Link} to="/categoria/Accesorios" style={color}>Accesorios</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link as={Link} to="/" style={color}>Contacto</Nav.Link>
-                            </Nav.Item>
-                        </Nav>
-                        <Nav className="justify-content-end">
-                            <Nav.Link as={Link} to="/cart"><CartWidget /></Nav.Link>
-                        </Nav>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>
-        </div>
+
+        <nav className="navbar">
+            <div className="navbar-container">
+                <h1>
+                    <Link to="/"><img className="logo" src={"/images/tiendaSmartLogo.png"} alt="Logo"></img></Link>
+                </h1>
+
+                <div className="menu"> 
+                    <NavLink to="/categoria/Smartphones" >Smartphones</NavLink>
+                    <NavLink to="/categoria/Tablets" className="Tablets " >Tablets</NavLink>
+                    <NavLink to="/categoria/Accesorios" className="Accesorios " >Accesorios</NavLink>
+                </div>
+
+                <CartWidget />
+
+                <button className="hamburger" onClick={handleHamburger} ref={hamburgerRef} >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <script src="/navbar.js"></script>
+        </nav>
+
     )
 }
 export default NavBar

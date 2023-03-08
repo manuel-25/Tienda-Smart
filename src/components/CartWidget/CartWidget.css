@@ -1,10 +1,14 @@
 @import "../../variables.css";
 
 .widget-container{
-    display: flex;
+    display: none;
     font-size: 14px;
-    color: #fff;
     padding: 10px;
+}
+
+.widget-container a {
+    text-decoration: none;
+    color: var(--main-color);
 }
 
 .widget-link {
@@ -13,9 +17,16 @@
 
 .widget-details {
     display: flex;
-    color: #fff;
+    color: var(--green-color);
 }
 
 .widget__counter--price {
     color: var(--green-color);
+}
+
+
+@media (min-width: 768px) {
+    .widget-container {
+        display: flex;
+    }
 }
