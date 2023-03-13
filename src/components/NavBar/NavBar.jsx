@@ -33,6 +33,13 @@ function NavBar() {
                     <span></span>
                     <span></span>
                 </button>
+                
+                <nav className="mobile-navbar">
+                    <NavLink to="/categoria/Smartphones" >Smartphones</NavLink>
+                    <NavLink to="/categoria/Tablets" className="Tablets " >Tablets</NavLink>
+                    <NavLink to="/categoria/Accesorios" className="Accesorios " >Accesorios</NavLink>
+                    <CartWidget />
+                </nav>
             </div>
 
             <script src="/navbar.js"></script>

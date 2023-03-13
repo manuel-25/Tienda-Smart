@@ -11,7 +11,7 @@
 
 .navbar {
     z-index: 99;
-
+    position: relative;
     background-color: var(--secondary-color-pale);
     padding: 16px 32px;
     border-bottom: 2px solid var(--secondary-color);
@@ -93,6 +93,24 @@
 
 .menu a:hover, a.active {
     background-color: var(--text-color-hover);
+}
+
+.mobile-navbar {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 90;
+    padding-top: 120px;
+    background-color: var(--secondary-color-pale);
+}
+
+.mobile-navbar a {
+    display: block;
+    text-decoration: none;
+    color: var(--main-color);
 }
 
 @media (min-width: 768px) {
