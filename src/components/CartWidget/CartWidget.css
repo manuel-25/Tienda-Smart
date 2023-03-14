@@ -1,9 +1,13 @@
 @import "../../variables.css";
 
 .widget-container{
-    display: none;
+    display: flex;
     font-size: 14px;
     padding: 10px;
+}
+
+.widget-container.is-active {
+    display: flex;
 }
 
 .widget-container a {

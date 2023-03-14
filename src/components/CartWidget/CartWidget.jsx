@@ -9,10 +9,11 @@ import {Link} from "react-router-dom"
 
 function CartWidget () {
     const {getTotalItemsInCart, getSubtotalPrice} = useContext(cartContext)
-    //let color = { color: '#fff' }
+
+
 
     return (
-        <div className="widget-container">
+        <div className='widget-container'>
              <Link to="/cart" className="widget-link"><FontAwesomeIcon icon={faCartShopping} /*style={color}*/ /></Link>
              <div className="widget-details">
                 <Link to="/cart" className="widgetCounter">
