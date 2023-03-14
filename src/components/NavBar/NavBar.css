@@ -1,20 +1,22 @@
 @import "../../variables.css";
 
-.navbar-container {
-    max-width: 100%;
-    margin: 0 auto;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
 
 .navbar {
-    z-index: 99;
     position: relative;
+    z-index: 99;
     background-color: var(--secondary-color-pale);
     padding: 16px 32px;
     border-bottom: 2px solid var(--secondary-color);
+}
+
+.navbar-container {
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .logo{
@@ -95,23 +97,35 @@
     background-color: var(--text-color-hover);
 }
 
-.mobile-navbar {
-    display: block;
+.sidebar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     min-height: 100vh;
-    z-index: 90;
+    z-index: 98;
     padding-top: 120px;
     background-color: var(--secondary-color-pale);
-}
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .sidebar.is-active {
+    transform: translateX(0);
+  }
 
-.mobile-navbar a {
+.sidebar a {
     display: block;
     text-decoration: none;
     color: var(--main-color);
 }
+
+
+body.is-menu-open {
+    overflow: hidden;
+}
+
+
 
 @media (min-width: 768px) {
     
@@ -121,6 +135,11 @@
 
     .menu {
         display: flex;
+    }
+
+    .sidebar {
+        visibility: hidden;
+        opacity: 0;
     }
 }
  
